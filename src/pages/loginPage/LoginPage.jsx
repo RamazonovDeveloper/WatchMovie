@@ -38,7 +38,11 @@ const Loginpage = () => {
         console.log("handleClick");
         if (emailRef.current.value != '') {
             if (emailRef.current.value != '') {
-                
+                if (validEmail && validPass) {
+                    console.log("valid email");
+                    localStorage.setItem('token', 'salom')
+                    navigate(`/`)
+                }   
             }else{
                 SetValidPass(false)
             }
@@ -46,11 +50,7 @@ const Loginpage = () => {
             SetValidEmail(false)
         }
 
-        if (validEmail && validPass) {
-            console.log("valid email");
-            localStorage.setItem('token', 'salom')
-            navigate(`/`)
-        }
+        
         
     }
 
