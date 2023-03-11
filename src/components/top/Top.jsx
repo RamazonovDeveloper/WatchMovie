@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { NavLink } from 'react-router-dom';
 import './Top.scss'
-import duration from '../../img/duration.png'
-import rating from '../../img/ratings.png'
-import img from '../../img/login_img_1.png'
 import Singlemovie from '../singleMovieItem/SingleMovie';
 
 import top1 from '../../img/top1.jpg'
@@ -12,7 +8,9 @@ const Top = () => {
 
     const [top, setTop] = useState([])
 
-    
+    const salomRamazonov = () => {
+        console.log("Hello Ramazonov!!!");
+    }
 
     useEffect(async() => {
         const topProm = await fetch('https://omdbapi.com/?i=tt3896198&apikey=4b545227&s=iron')
@@ -24,12 +22,6 @@ const Top = () => {
 
         setTop(promJson.Search)
 
-
-        // fetch('https://omdbapi.com/?i=tt3896198&apikey=4b545227&s=iron')
-        // .then(res => res.json())
-        // .then(res => {console.log('res bu  ',res)})
-        // .then(res => {setTop(res)})
-        // .catch(err => {console.log(err)})
 
     },[])
     
@@ -58,108 +50,6 @@ const Top = () => {
                     })
                 }
 
-                {/* <div className='top__cards__item'>
-                        
-                        <span className='genre'>Fantasy</span>
-                        <img src={img}/>
-                        <div className='texts'>
-                            <div>
-                                <span className='duration'>
-                                    <img src={duration} alt="" />
-                                    1hr 24mins
-                                </span>
-                                <span className='rating'>
-                                    <img src={rating} alt="" />
-                                    21.3K views
-                                </span>
-                            </div>
-                            <h4 className='title'>The Ring’s Lord</h4>
-                        </div>
-
-                    
-                </div>
-                <div className='top__cards__item'>
-                        
-                        <span className='genre'>Fantasy</span>
-                        <img src={img}/>
-                        <div className='texts'>
-                            <div>
-                                <span className='duration'>
-                                    <img src={duration} alt="" />
-                                    1hr 24mins
-                                </span>
-                                <span className='rating'>
-                                    <img src={rating} alt="" />
-                                    21.3K views
-                                </span>
-                            </div>
-                            <h4 className='title'>The Ring’s Lord</h4>
-                        </div>
-
-                    
-                </div>
-
-                <div className='top__cards__item'>
-                        
-                        <span className='genre'>Fantasy</span>
-                        <img src={img}/>
-                        <div className='texts'>
-                            <div>
-                                <span className='duration'>
-                                    <img src={duration} alt="" />
-                                    1hr 24mins
-                                </span>
-                                <span className='rating'>
-                                    <img src={rating} alt="" />
-                                    21.3K views
-                                </span>
-                            </div>
-                            <h4 className='title'>The Ring’s Lord</h4>
-                        </div>
-
-                    
-                </div>
-
-                <div className='top__cards__item'>
-                        
-                        <span className='genre'>Fantasy</span>
-                        <img src={img}/>
-                        <div className='texts'>
-                            <div>
-                                <span className='duration'>
-                                    <img src={duration} alt="" />
-                                    1hr 24mins
-                                </span>
-                                <span className='rating'>
-                                    <img src={rating} alt="" />
-                                    21.3K views
-                                </span>
-                            </div>
-                            <h4 className='title'>The Ring’s Lord</h4>
-                        </div>
-
-                    
-                </div>
-                <div className='top__cards__item'>
-                        
-                        <span className='genre'>Fantasy</span>
-                        <img src={img}/>
-                        <div className='texts'>
-                            <div>
-                                <span className='duration'>
-                                    <img src={duration} alt="" />
-                                    1hr 24mins
-                                </span>
-                                <span className='rating'>
-                                    <img src={rating} alt="" />
-                                    21.3K views
-                                </span>
-                            </div>
-                            <h4 className='title'>The Ring’s Lord</h4>
-                        </div>
-
-                    
-                </div> */}
             </div>
         </div>
     );

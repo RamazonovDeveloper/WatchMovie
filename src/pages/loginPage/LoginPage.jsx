@@ -33,15 +33,25 @@ const Loginpage = () => {
         }
     }
 
-    // const activeBtn = () => {
-    //     return 'submitBtn submitBtn--active'
-    // }
 
     const handleClick = () => {
-        if(emailRef.current.value != '' && passRef.current.value !=''){
+        console.log("handleClick");
+        if (emailRef.current.value != '') {
+            if (emailRef.current.value != '') {
+                
+            }else{
+                SetValidPass(false)
+            }
+        }else{
+            SetValidEmail(false)
+        }
+
+        if (validEmail && validPass) {
+            console.log("valid email");
             localStorage.setItem('token', 'salom')
             navigate(`/`)
         }
+        
     }
 
     
@@ -65,7 +75,7 @@ const Loginpage = () => {
                     {/* {
                         !validPass ? <span className='invalidMessage'>Invalid Password</span> : ''
                     } */}
-                    <button className={'submitBtn'} >Login</button>
+                    <button className={'submitBtn'} onClick={() => handleClick()}>Login</button>
                 </div>
             </div>
             <div className='login__img'>
