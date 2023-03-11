@@ -1,0 +1,45 @@
+.top{
+    padding: 0 100px;
+    &__text{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > h3{
+            margin: 0;
+            font-weight: 500;
+            font-size: 42px;
+            line-height: 64px;
+            /* identical to box height, or 133% */
+            
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            
+            /* Text/White */
+            
+            color: #FFFFFF; 
+
+        }
+        & > a{
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 32px;
+            /* identical to box height, or 133% */
+            
+            text-align: right;
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            
+            /* Secondary/Yellow */
+            
+            color: #FED530;
+        }
+    }
+
+    &__cards{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+
+
+    }
+}
